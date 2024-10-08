@@ -16,18 +16,14 @@ import { fileURLToPath } from 'url'
 import path from 'path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-app.use(cookieParser())
 app.use(express.static(path.resolve(__dirname, './client/dist')))
-
+app.use(cookieParser())
+console.log(__dirname)
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'))
 }
 
 app.use(express.json())
-
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
 
 app.get('/api/v1/test', (req, res) => {
     res.json({ msg: 'test route' });
