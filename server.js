@@ -25,10 +25,13 @@ if(process.env.NODE_ENV === 'development'){
 
 app.use(express.json())
 
+<<<<<<< HEAD
 app.get('/api/v1/test', (req, res) => {
     res.json({ msg: 'test route' });
   });
 
+=======
+>>>>>>> eef831d0d8798e44659102bc078356a130f0595b
 app.use('/api/v1/notes',authenticateUser, noteRouter)
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/users',authenticateUser, userRouter)
